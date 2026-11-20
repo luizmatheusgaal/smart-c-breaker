@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="830" viewBox="0 0 900 830" font-family="Arial, sans-serif">
+  <rect width="900" height="830" fill="white"/>
+  <g stroke="black" stroke-width="3" fill="none" stroke-linejoin="round">
+    <!-- Alimentação 3V3 -->
+    <line x1="60" y1="70" x2="140" y2="70"/>
+    <line x1="100" y1="70" x2="100" y2="110"/>
+    <!-- R1 10k -->
+    <polyline points="100,110 100,118 88,128 112,146 88,164 112,182 100,192 100,200"/>
+    <line x1="100" y1="200" x2="100" y2="260"/>
+    <!-- Nó B (bias) -> R2 -->
+    <line x1="100" y1="260" x2="100" y2="300"/>
+    <polyline points="100,300 100,308 88,318 112,336 88,354 112,372 100,382 100,390"/>
+    <line x1="100" y1="390" x2="100" y2="480"/>
+
+    <!-- Capacitor 10uF -->
+    <line x1="100" y1="260" x2="230" y2="260"/>
+    <line x1="230" y1="260" x2="230" y2="340"/>
+    <line x1="205" y1="340" x2="255" y2="340"/>
+    <line x1="205" y1="360" x2="255" y2="360"/>
+    <line x1="230" y1="360" x2="230" y2="480"/>
+
+    <!-- Fio 1 do SCT: do nó B ao topo do burden e do SCT -->
+    <line x1="230" y1="260" x2="470" y2="260"/>
+    <line x1="340" y1="260" x2="340" y2="290"/>
+    <!-- Burden 56 ohm -->
+    <polyline points="340,290 340,296 328,304 352,320 328,336 352,352 340,360 340,366"/>
+    <line x1="340" y1="366" x2="340" y2="420"/>
+    <!-- SCT -->
+    <line x1="470" y1="260" x2="470" y2="305"/>
+    <circle cx="470" cy="340" r="35"/>
+    <path d="M 455 325 q 10 -10 20 0 q 10 10 20 0" />
+    <line x1="470" y1="375" x2="470" y2="420"/>
+    <!-- Fio 2 do SCT -> GPIO35 -->
+    <line x1="340" y1="420" x2="470" y2="420"/>
+    <line x1="470" y1="420" x2="640" y2="420"/>
+
+    <!-- GND rail -->
+    <line x1="60" y1="480" x2="640" y2="480"/>
+
+    <!-- ESP32 -->
+    <rect x="640" y="380" width="160" height="130" rx="8" fill="#f3f4f6"/>
+    <!-- LM35 -->
+    <rect x="620" y="70" width="170" height="120" rx="8" fill="#f3f4f6"/>
+    <line x1="800" y1="95" x2="850" y2="95"/>
+    <line x1="800" y1="130" x2="850" y2="130"/>
+    <line x1="800" y1="165" x2="850" y2="165"/>
+  </g>
+  <g font-size="14" fill="#f97316" font-weight="bold">
+    <text x="805" y="88">→ VIN (5V)</text>
+    <text x="805" y="123">→ GPIO 34</text>
+    <text x="805" y="158">→ GND</text>
+  </g>
+
+  <!-- Nós -->
+  <g fill="black">
+    <circle cx="100" cy="260" r="6"/>
+    <circle cx="340" cy="260" r="6"/>
+    <circle cx="340" cy="420" r="6"/>
+    <circle cx="230" cy="260" r="6"/>
+  </g>
+  <g fill="none" stroke="#f97316" stroke-width="2.5">
+    <path d="M 40 215 Q 55 245 90 255"/>
+    <path d="M 405 440 Q 360 440 345 425"/>
+  </g>
+  <text x="20" y="210" font-size="20" fill="#f97316" font-weight="bold">Nó</text>
+  <text x="405" y="460" font-size="20" fill="#f97316" font-weight="bold">Nó</text>
+
+  <!-- Rótulos -->
+  <g font-size="18" fill="black">
+    <text x="60" y="60" font-weight="bold">3V3</text>
+    <text x="125" y="160">R1 = 10 kΩ</text>
+    <text x="125" y="350">R2 = 10 kΩ</text>
+    <text x="60" y="505" font-weight="bold">GND</text>
+    <text x="75" y="248" font-weight="bold">B</text>
+    <text x="250" y="355">C = 10 µF</text>
+    <text x="250" y="375" font-size="14">(+ no ponto B, − no GND)</text>
+    <text x="355" y="330">R3 = 56 Ω</text>
+    <text x="355" y="350" font-size="14">(burden)</text>
+    <text x="395" y="395" font-size="14">SCT-013-000</text>
+    <text x="395" y="240" font-size="14">fio 1 do SCT (bias 1,65 V)</text>
+    <text x="355" y="445" font-size="14">fio 2 do SCT</text>
+    <text x="660" y="400" font-weight="bold">ESP32</text>
+    <text x="660" y="425" font-size="15">GPIO 35 (ADC1)</text>
+    <text x="660" y="445" font-size="15">GPIO 34 (ADC1)</text>
+    <text x="660" y="465" font-size="15">VIN (5V)</text>
+    <text x="660" y="485" font-size="15">GND</text>
+    <text x="640" y="90" font-weight="bold">LM35</text>
+    <text x="640" y="150" font-size="14">+Vs | Vout | GND</text>
+    <text x="640" y="172" font-size="12" fill="#6b7280">(face plana p/ você)</text>
+    <text x="150" y="30" font-size="22" font-weight="bold">Esquema elétrico - Monitor LM35 + SCT-013 com ESP32</text>
+  </g>
+
+  <!-- ===== HL-52S + contator ===== -->
+  <line x1="60" y1="540" x2="840" y2="540" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <text x="60" y="570" font-size="20" font-weight="bold">Proteção: módulo relé HL-52S + contator (abre com corrente ≥ 30 A)</text>
+
+  <g stroke="black" stroke-width="3" fill="none" stroke-linejoin="round">
+    <!-- HL-52S -->
+    <rect x="200" y="590" width="200" height="130" rx="8" fill="#f3f4f6"/>
+    <!-- pinos ESP32 -> HL-52S (esquerda) -->
+    <line x1="150" y1="620" x2="200" y2="620"/>
+    <line x1="150" y1="655" x2="200" y2="655"/>
+    <line x1="150" y1="690" x2="200" y2="690"/>
+    <!-- contatos COM / NC (direita) -->
+    <line x1="400" y1="630" x2="450" y2="630"/>
+    <line x1="400" y1="680" x2="620" y2="680"/>
+    <!-- bobina do contator -->
+    <rect x="620" y="660" width="110" height="40" fill="#fef9c3"/>
+    <line x1="730" y1="680" x2="790" y2="680"/>
+    <!-- fase ate COM -->
+    <line x1="450" y1="630" x2="450" y2="630"/>
+  </g>
+  <g font-size="14" fill="#f97316" font-weight="bold">
+    <text x="40" y="615">VIN (5V) →</text>
+    <text x="40" y="650">GPIO 26 →</text>
+    <text x="40" y="685">GND →</text>
+    <text x="455" y="635">← L (fase 220 V)</text>
+    <text x="795" y="685">→ N (neutro)</text>
+  </g>
+  <g font-size="16" fill="black">
+    <text x="215" y="612" font-weight="bold">HL-52S</text>
+    <text x="215" y="640" font-size="14">VCC</text>
+    <text x="215" y="675" font-size="14">IN1 (ativo em LOW)</text>
+    <text x="215" y="710" font-size="14">GND</text>
+    <text x="345" y="625" font-size="14">COM</text>
+    <text x="345" y="675" font-size="14">NC</text>
+    <text x="625" y="655" font-size="14">Bobina (A1-A2)</text>
+    <text x="630" y="685" font-size="14" font-weight="bold">Contator</text>
+  </g>
+
+  <!-- Circuito de potência -->
+  <g stroke="black" stroke-width="3" fill="none" stroke-linejoin="round">
+    <line x1="60" y1="760" x2="400" y2="760"/>
+    <line x1="400" y1="760" x2="440" y2="740"/>
+    <line x1="440" y1="760" x2="700" y2="760"/>
+    <rect x="700" y="735" width="120" height="50" fill="#f3f4f6"/>
+    <!-- ligação mecânica contator -->
+    <line x1="675" y1="700" x2="675" y2="725" stroke-dasharray="5 5" stroke="#6b7280" stroke-width="2"/>
+    <line x1="675" y1="725" x2="420" y2="725" stroke-dasharray="5 5" stroke="#6b7280" stroke-width="2"/>
+    <line x1="420" y1="725" x2="420" y2="755" stroke-dasharray="5 5" stroke="#6b7280" stroke-width="2"/>
+  </g>
+  <g font-size="14" fill="black">
+    <text x="60" y="750" font-weight="bold">Rede (fase) até 40 A</text>
+    <text x="470" y="780">contato de potência do contator (≥ 40 A)</text>
+    <text x="725" y="765" font-weight="bold">Carga</text>
+  </g>
+  <text x="60" y="800" font-size="14" fill="#b91c1c" font-weight="bold">ATENÇÃO: os contatos do HL-52S suportam só ~10 A. Eles comandam a bobina do contator, nunca a carga.</text>
+</svg>
